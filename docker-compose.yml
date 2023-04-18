@@ -1,0 +1,15 @@
+version: '2.4'
+
+services:
+  nodejsutil:
+    build: 
+      dockerfile: Dockerfile
+      context: ./
+    container_name: nodejsutil
+    env_file:
+      - env_file
+    volumes:
+      - ../:/home/nodejs/projects
+    working_dir: /home/nodejs
+    entrypoint: tail
+    command: -f /dev/null
