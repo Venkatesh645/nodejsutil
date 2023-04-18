@@ -15,6 +15,10 @@ COPY apt.conf /etc/apt/apt.conf
 USER node
 WORKDIR /home/node
 
+RUN mkdir ~/.npm-global && npm config set prefix '~/.npm-global'
+ENV PATH=/home/node/.npm-global/bin:$PATH
+RUN . ~/.bashrc && npm install npm -g
+
 # Installing the zsh
 # RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)"
 
