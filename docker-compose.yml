@@ -9,7 +9,7 @@ services:
     env_file:
       - env_file
     volumes:
-      - ../:/home/nodejs/projects
-    working_dir: /home/nodejs
+      - ../../:/home/node/projects
+    working_dir: /home/node
     entrypoint: tail
     command: -f /dev/null
